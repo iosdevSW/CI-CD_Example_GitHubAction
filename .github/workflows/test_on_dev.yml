@@ -27,4 +27,4 @@ jobs:
 
       # shell을 이용해 하나의 명령을 수행
       - name: Start xcode build 🛠
-        run: xcodebuild clean test -project CI_CD_Example_GitHubAction.xcodeproj -scheme CI_CD_Example_GitHubAction -destination 'platform=iOS Simulator,name=iPhone 11 Pro,OS=14.4'
+        run: xcodebuild clean test -project CI-CD_Example_GitHubAction/CI_CD_Example_GithubAction.xcodeproj -scheme CI_CD_Example_GitHubAction -destination 'platform=iOS Simulator,name=iPhone 11 Pro,OS=14.4'
