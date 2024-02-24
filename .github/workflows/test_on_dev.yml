@@ -1,0 +1,30 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the workflow will run
+on:
+  # dev 브랜치에 push나 pullRequest 이벤트가 발생할때 workflow를 trigger
+  push:
+    branches: [ "dev" ]
+  pull_request:
+    branches: [ "dev" ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# workflow는 직,병렬적으로 실행되는 하나 이상의 job으로 구성됨
+jobs:
+  # 이 workflow는 "build"라는 하나의 job으로 구성
+  build:
+    # 작업 실행 환경
+    runs-on: macos-latest
+
+    # Step은 job일부로 실행될 일련의 task들
+    steps:
+      # uses를 사용하면 GitHub Action에서 기본적으로 제공하는 액션을 사용할 수 있음 아래 액션은 repository에 checkout하는 액션
+      - uses: actions/checkout@v3
+
+      # shell을 이용해 하나의 명령을 수행
+      - name: Start xcode build 🛠
+        run: xcodebuild clean test -project CI-CD_Example_GitHubAction/CI_CD_Example_GitHubAction.xcodeproj -scheme CI_CD_Example_GitHubAction -destination 'platform=iOS Simulator,name=iPhone 11 Pro,OS=14.4'
