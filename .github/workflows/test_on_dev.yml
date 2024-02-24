@@ -25,9 +25,6 @@ jobs:
       # uses를 사용하면 GitHub Action에서 기본적으로 제공하는 액션을 사용할 수 있음 아래 액션은 repository에 checkout하는 액션
       - uses: actions/checkout@v4
 
-      - name: log list
-        run: xcodebuild -list
-
       # shell을 이용해 하나의 명령을 수행
       - name: Start xcode build 🛠
-        run: xcodebuild clean test -project CI_CD_Example_GithubAction.xcodeproj -scheme CI_CD_Example_GitHubAction -destination 'platform=iOS Simulator,name=iPhone 11 Pro,OS=14.4'
+        run: xcodebuild clean test -project CI_CD_Example_GithubAction.xcodeproj -scheme CI_CD_Example_GithubAction -destination 'platform=iOS Simulator,name=iPhone 11 Pro,OS=14.4'
