@@ -6,6 +6,7 @@
 //
 
 import XCTest
+@testable import CI_CD_Example_GithubAction
 
 final class CI_CD_Example_GithubActionTests: XCTestCase {
 
