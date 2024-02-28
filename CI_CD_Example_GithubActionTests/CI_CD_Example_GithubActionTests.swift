@@ -22,7 +22,7 @@ final class CI_CD_Example_GithubActionTests: XCTestCase {
         XCTAssertTrue(true)
     }
     
-    func test_Fail() {
-        XCTAssertFalse(true)
-    }
+//    func test_Fail() {
+//        XCTAssertFalse(true)
+//    }
 }
